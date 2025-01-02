@@ -9,9 +9,10 @@ describe("GET /", () => {
   });
 });
 
-describe("GET /non-existent-route", () => {
-  it("should return 404 for non-existent route", async () => {
-    const response = await request(app).get("/non-existent-route");
-    expect(response.statusCode).toBe(404);
+describe("GET /about", () => {
+  it("should return 'This is the About page!'", async () => {
+    const response = await request(app).get("/about");
+    expect(response.statusCode).toBe(200);
+    expect(response.text).toBe("This is the About page!");
   });
 });
